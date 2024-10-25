@@ -25,3 +25,13 @@ RouterProvider router={appRouter}
 
 // build the header, add it in login page and then create login form. Make it interactive with respect to sign out.
 
+// Add validation to the form
+    - add eventlistner to button
+    - add the validation logic inside utils
+        - if string is returned, it means error
+        - if null is returned, this means no error.
+        - we can extract the value of email and pw by creating a reference using useref hook.
+        - useRef give reference of the inputbox in the form of an object
+
+
+// building the authentication
