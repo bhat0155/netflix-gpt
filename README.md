@@ -20,4 +20,8 @@ Login/sign up page. Once signed up, go to the browse page.
 Do setup first such as routing and all that
 
 For router, first create appRouter from createBrowserROuter and we supply that via Router provider which sits in the return of body.
-ROuterProvider router={appRouter}
+RouterProvider router={appRouter}
+
+
+// build the header, add it in login page and then create login form. Make it interactive with respect to sign out.
+
