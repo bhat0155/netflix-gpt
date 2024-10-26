@@ -34,4 +34,18 @@ RouterProvider router={appRouter}
         - useRef give reference of the inputbox in the form of an object
 
 
-// building the authentication
+//  hosting the app on firebase
+    - for backend, we will be using google firebase
+    - add project, use web
+    - install firebase sdk, install configuration in firebase.js
+    - enable authentication inside firebase (project overview)
+    - use sign in method as your authentication
+    - install firebase cli- npm install -g firebase-tools
+    - do firebase login
+    - firebase init
+    - github hosting for the local
+    - public directory is build folder
+    - configure to index.html -> no
+    - setup automatic deploy -> no
+    - then do npm build
+    - then firebase deploy
