@@ -1,3 +1,4 @@
+
 export const formValidate = (email, password) => {
   const validateEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
   const validatePassword =

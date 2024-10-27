@@ -1,12 +1,17 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { formValidate } from "../utils/formValidate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignedIn, setIsSignedIn] = useState(true);
   const email = useRef(null);
   const password = useRef(null);
-  const [validateError, setValidateError]=useState()
+  const [validateError, setValidateError] = useState();
 
   const handleLogIn = () => {
     setIsSignedIn(!isSignedIn);
@@ -14,11 +19,52 @@ const Login = () => {
 
   const handleValidation = () => {
     console.log(email.current.value);
-    console.log(password.current.value); 
+    console.log(password.current.value);
 
     const result = formValidate(email.current.value, password.current.value);
-    setValidateError(result)
-    console.log(result);
+    setValidateError(result);
+
+    if (validateError) return;
+    if (!isSignedIn) {
+      // sign up logic
+
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log("sign up", user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setValidateError("sign up error", errorMessage, errorCode);
+          // ..
+        });
+    } else {
+      //sign in logic
+
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log("sign in ", user)
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setValidateError( errorCode, errorMessage)
+        });
+    }
   };
   return (
     <div>
@@ -54,7 +100,7 @@ const Login = () => {
           ref={password}
           type="text"
           placeholder="Password "
-          className="m-1 p-2  bg-gray-700  text-white" 
+          className="m-1 p-2  bg-gray-700  text-white"
         ></input>
         <button
           className="m-1 px-20 my-4 py-2 bg-red-600 text-white rounded-lg block"

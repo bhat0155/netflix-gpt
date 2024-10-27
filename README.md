@@ -49,3 +49,52 @@ RouterProvider router={appRouter}
     - setup automatic deploy -> no
     - then do npm build
     - then firebase deploy
+
+
+// Authentication
+- Go to the documentation- go to web- manage users
+- if the error message is null, then only do the authentication
+- if the error exits, just return
+- import getAuth and createUserWithEmail&PAssword
+- copy paste sign up code from docs
+- console the response
+- check on firebase whether user is registered
+- do sign in logic
+- console the sign in user object
+
+- redux- to change the state of the loggin in user
+    - install 2 libraries->  npm i -d @redux/toolkit
+    - npm i react redux
+    - in utils, create appstore.js
+        - const appStore= configureStore({
+            reducer: {
+                user: userReducer (or the name you imported)
+            }
+        })
+        export default appStore
+
+    - Then we will create a UserSlice in utils as well
+        - const userSlice=createSlice({
+            name: "user",
+            initialState: null,
+            reducers: {
+                addUser: (state, action)=>{
+                    return action.payload
+                },
+                removeUser: (state, action)=>{
+                    return null
+                }
+            }
+        })
+
+        export const {addUser, removeUser} from userSlice.actions
+        export default userSlice.reducer
+
+-  Now import this reducer and put it up at store
+- Provide the store to app at the root- where body is. wrap the body inside provider
+- provider will take a store, which will in turn take app store
+- 
+
+
+
+
