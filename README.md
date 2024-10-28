@@ -93,8 +93,32 @@ RouterProvider router={appRouter}
 -  Now import this reducer and put it up at store
 - Provide the store to app at the root- where body is. wrap the body inside provider
 - provider will take a store, which will in turn take app store
-- 
 
+- Now as soon as a user logs in, update the
+store with that user info
+- We will dispatch using a utility provided
+by fireBase, onAuthStateChange
+- you can find it on docs, manage users
+and initialise it on root level in body
+
+- That API is like an event listner and we dont want to call it again and again. we need to call it only once. So we would add it in a useEffect hook.
+
+- use dispatch hook inside onAuthState change to add someone to cart or remove them.
+
+- dispatch(addUser(id, userName, displayName))
+
+- when user is signed in, navigate them to the browse page. for that, use useNavigate hook.
+if user sign out, navigate to main or login page. nagivate through login.js.
+
+// sign out Feature
+- add header to browse page
+- give it w-screen
+- add usericon in header and button
+- add tailwind
+- add signout api to the button. navigate to login page. 
+- add update user profile api- do this when a user is created.
+-  display photo on icon by useSelector.
+const user=useSelector((store)=>store.user)
 
 
 
