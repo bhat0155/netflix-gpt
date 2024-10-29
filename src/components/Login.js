@@ -7,16 +7,18 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import {  updateProfile } from "firebase/auth";
-
+import { updateProfile } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignedIn, setIsSignedIn] = useState(true);
   const email = useRef(null);
   const password = useRef(null);
-  const name=useRef(null)
+  const name = useRef(null);
   const [validateError, setValidateError] = useState();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogIn = () => {
     setIsSignedIn(!isSignedIn);
@@ -44,10 +46,23 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://lh3.googleusercontent.com/a/ACg8ocKhHWdLH5J8fXoSvSnp97M9HOVcomhkY9vAFo5lNPrPP6FMgzrD=s576-c-no",
+            photoURL:
+              "https://lh3.googleusercontent.com/a/ACg8ocKhHWdLH5J8fXoSvSnp97M9HOVcomhkY9vAFo5lNPrPP6FMgzrD=s576-c-no",
           })
             .then(() => {
-              navigate("/browse")
+              // update store once againf
+              const { uid, displayName, email, photoURL } = auth.currentUser;
+
+              dispatch(
+                addUser({
+                  email: email,
+                  displayName: displayName,
+                  uid: uid,
+                  photoURL: photoURL,
+                })
+              );
+
+              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -103,7 +118,7 @@ const Login = () => {
         </h1>
         {!isSignedIn && (
           <input
-          ref={name}
+            ref={name}
             type="text"
             placeholder="Name"
             className="m-1 p-2 bg-gray-700  text-white"

@@ -1,13 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
+  const user = useSelector((store) => store.user);
+
+  console.log({ selector: user });
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => {
         // An error happened.
@@ -20,15 +24,12 @@ const Header = () => {
         alt="logo"
         className="w-20"
       ></img>
-      <div className="flex">
-        <img
-          src="https://occ-0-953-1001.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABaSDR-kTPhPYcVVGSsV0jC3D-Q5HZSFE6fjzAM-4cMpltx1Gw9AV7OTnL8sYnC6CBxOBZQEAJLjStt822uD2lctOvNR05qM.png?r=962"
-          alt="user Image"
-        ></img>
+   {   user && <div className="flex">
+        <img src={user.photoURL} alt="user img"></img>
         <button onClick={handleSignOut} className="bg-red-500 text-white">
           Sign Out
         </button>
-      </div>
+      </div>}
     </div>
   );
 };
