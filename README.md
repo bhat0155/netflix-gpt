@@ -122,3 +122,35 @@ const user=useSelector((store)=>store.user)
 
 
 
+Part-9
+- The browse should only be shown to authenticated users
+- same as vice-versa. If a logged in user wanna go to the login page, they should be redirected to browse page
+- put the useeffect in body to header so that we can use navigate
+
+Part-10 - unsubscribing on auth change
+- This means we have to remove event listners on header since it will be called multiple times 
+and event listeners will be added multiple times.
+- OnAuthState changed returns an unscubscribe function which we need to put in the return value.
+
+Part-11
+- Put strings in a constant variable so that it can be reused later.
+
+Part-12
+- set up TMDB.
+- Get API_KEY and API_ACCESS_TOKEN
+- API call will be made in the browse page. Get data from nowPlaying movies.
+
+
+Part-13
+- Adding movie data to the store with the help of redux
+- create a movieSlice.js
+- add moviesSlice to appStore.js
+- add results to the movie slice by using dispatch
+
+Part 14
+- Creating the custom hook
+- browse component is getting overloaded. SO dislocating redux go to a new place.
+
+Part-15
+- Making the browsePage
+
