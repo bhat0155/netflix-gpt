@@ -40,6 +40,7 @@ const Header = () => {
 
   // console.log({ selector: user });
   const handleSignOut = () => {
+    console.log("sign out button clicked")
     signOut(auth)
       .then(() => {
         navigate("/");
@@ -49,7 +50,7 @@ const Header = () => {
       });
   };
   return (
-    <div className="w-full h-16 absolute  px-8 my-2 bg-gradient-to-b from-black z-1 flex justify-between ">
+    <div className="w-full h-16 absolute px-8 my-2 bg-gradient-to-b from-black z-1 flex justify-between  z-10">
       <img
         src={NETFLIX_LOGO}
         alt="logo"

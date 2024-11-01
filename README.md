@@ -172,3 +172,8 @@ Part-16
 - Put trailer inside redux store. Add it in movies slice in reducers.
 
 - Creating custom hook for trailer video- make component clean
+- useMovieTrailer
+
+Part-17
+- Building video background
+- 
