@@ -1,11 +1,24 @@
 import Header from "./Header";
+import MainContainer from "./MainContainer";
 import useNowPlayingMovies from "./hooks/useNowPlayingMovies";
+import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
-    useNowPlayingMovies()
+  useNowPlayingMovies();
   return (
     <div className="w-screen">
       <Header />
+      <MainContainer />
+      <SecondaryContainer />
+      {/** 
+         Main container
+            -video background
+            -title
+
+        secondary container
+            - movieList *n
+                - cards*n
+        */}
     </div>
   );
 };

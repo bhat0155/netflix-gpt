@@ -153,4 +153,22 @@ Part 14
 
 Part-15
 - Making the browsePage
+- This is divided into 2 section, main movie section and different movies recommendation sections.
+- Main component will have video background and video title
+- Let the first movie in the array be the main movie
 
+
+Part-16
+- Building the video title
+- Pass title and desciption to video component with the help of props.
+- Now give the video background
+- There is video API in the TMDb section. It takes an id and give video of the particular movie
+- Get type trailer from it.
+- Key is youtube key which will help us fetch the trailer
+- send movie id to video component so that the trailer is fetched.
+- get type trailer with the help of filter method.
+- if there are no videos of type trailer, then take the first video. If that exist, then use 1st trailer video
+- Put embed code in videoBackground
+- Put trailer inside redux store. Add it in movies slice in reducers.
+
+- Creating custom hook for trailer video- make component clean
