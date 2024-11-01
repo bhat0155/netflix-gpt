@@ -176,4 +176,12 @@ Part-16
 
 Part-17
 - Building video background
-- 
+
+Part-18
+- creating movies suggestion list
+- Make a movieList component and movieCard Component
+- Pass title and movie data as props to movie list. Movie data can be obtained from redux store.
+- The movie list will have movie card component. Also put genre title above it.Make another div under it which will contain movie card
+- console all 20 movies
+- find image path to be shown as in the poster. Put image_CDN in the constants.
+- create a loop of movies and append the posters
