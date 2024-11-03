@@ -8,5 +8,6 @@ export const API_OPTIONS= {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MGE5OWM5OTI2ZDc2NDkwZDRhN2IyNWE4YTcxMTRlMiIsIm5iZiI6MTczMDM5MzA5NC44MDEwMTczLCJzdWIiOiI2NWY4YjYwNDk1OTBlMzAxODZlZGUyZmUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.EoXjf43dApo6I8MVl8cD-j8cvvRFRQgMf7yraPpvYeQ'
     }
   };
+  export const NETFLIX_BACKGROUND="https://assets.nflxext.com/ffe/siteui/vlv3/74d734ca-0eab-4cd9-871f-bca01823d872/web/CA-en-20241021-TRIFECTA-perspective_1ad68852-bcff-466d-a52c-c2e9dca92760_large.jpg"
 
 export const POSTER_URL="https://image.tmdb.org/t/p/w500"

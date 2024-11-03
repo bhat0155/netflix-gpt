@@ -11,6 +11,7 @@ import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import {  addUser } from "../utils/userSlice";
 import { PROFILE_PIC } from "../utils/constants";
+import { NETFLIX_BACKGROUND } from "../utils/constants";
 
 const Login = () => {
   const [isSignedIn, setIsSignedIn] = useState(true);
@@ -112,7 +113,7 @@ const Login = () => {
       <Header />
       <div>
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/74d734ca-0eab-4cd9-871f-bca01823d872/web/CA-en-20241021-TRIFECTA-perspective_1ad68852-bcff-466d-a52c-c2e9dca92760_large.jpg"
+          src={NETFLIX_BACKGROUND}
           alt="background-image"
         ></img>
       </div>

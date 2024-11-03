@@ -185,3 +185,24 @@ Part-18
 - console all 20 movies
 - find image path to be shown as in the poster. Put image_CDN in the constants.
 - create a loop of movies and append the posters
+
+Part-19
+- creating a toggle gpt button which will show gpt search page.
+- store the state of the button in redux
+- Make new slice, that is the gpt slice.
+- create form in GPT Search bar
+
+Part-22
+- Make the page language dynamic
+- The search text from the search button in searchPage must come from constants.
+- Create a new file language constants
+- create a language object and create diff key value pair for search
+- do the same thing for placeholder text
+- make the functionality to toggle the languages, give dropdown.
+- create select which has multiple options in the header, next to gpt button.
+- create a supporting language constant which is an array of object, object being identifier and name.
+- map the supporting language and for each language, create a dropdown.
+- store the language data inside redux store.
+- create a config slice .
+- create onChange on the select tag, create function, dispatch.
+- Make sure this option is only available on gpt search page
