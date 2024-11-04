@@ -205,4 +205,14 @@ Part-22
 - store the language data inside redux store.
 - create a config slice .
 - create onChange on the select tag, create function, dispatch.
-- Make sure this option is only available on gpt search page
+- Make sure this option is only available on gpt search page.
+
+Part-23
+- Adding GPT to our app.
+- Make api secret key and add it in the constants.
+- install npm open library
+- create new file in utils, initialise openAI key by importing it. It's equivalent to authorisation.
+- export default openai.
+- PreventDefault in form in search bar.
+- when clicking on button get data from the inputbox. You can use useRef.
+- fetch the results from openAI api and console.log(results.choices). Provide context to search as well.
