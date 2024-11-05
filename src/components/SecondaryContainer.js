@@ -7,9 +7,7 @@ const SecondaryContainer = () => {
   const popularMovies = useSelector((store) => store.movies?.popular);
   const topRated = useSelector((store) => store.movies?.topRated);
   const upComing = useSelector((store) => store.movies?.upComing);
-  console.log({ movies });
-  console.log({ popularMovies });
-
+ 
   return (
     <div className="bg-black">
       <div className="-mt-52 z-10 relative">

@@ -216,3 +216,9 @@ Part-23
 - PreventDefault in form in search bar.
 - when clicking on button get data from the inputbox. You can use useRef.
 - fetch the results from openAI api and console.log(results.choices). Provide context to search as well.
+
+- Go to tmdb and look for search API
+- For Each movie, search tmdb api. Map the geminiresults an search for each movie
+- result will be array of 5 promises. Extract them by doing promise.all
+- Push the results, bith gemini and tmdb in gptSLice
+- Render the heading and the number of cards on the search page.

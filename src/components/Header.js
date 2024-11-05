@@ -12,7 +12,7 @@ import { changeLanguage } from "../utils/languagesSlice";
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  // console.log({ photo: user?.photoURL });
+
   const dispatch = useDispatch();
   const GPTView = useSelector((store) => store.GPTView.currentState);
 
@@ -22,7 +22,7 @@ const Header = () => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const { uid, displayName, email, photoURL } = user;
-        // console.log({ ekam: user });
+
         dispatch(
           addUser({
             email: email,
@@ -42,9 +42,9 @@ const Header = () => {
     return () => unsubscribe;
   }, []);
 
-  // console.log({ selector: user });
+
   const handleSignOut = () => {
-    console.log("sign out button clicked");
+
     signOut(auth)
       .then(() => {
         navigate("/");

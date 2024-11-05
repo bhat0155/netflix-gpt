@@ -26,8 +26,7 @@ const Login = () => {
   };
 
   const handleValidation = () => {
-    console.log(email.current.value);
-    console.log(password.current.value);
+
 
     const result = formValidate(email.current.value, password.current.value);
     setValidateError(result);
@@ -66,7 +65,7 @@ const Login = () => {
               // An error occurred
               // ...
             });
-          console.log("sign up", user);
+
 
           // ...
         })
@@ -87,7 +86,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log("sign in ", user);
+
           const { uid, displayName, email, photoURL } = user;
 
           dispatch(
