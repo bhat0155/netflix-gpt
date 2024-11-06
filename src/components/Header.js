@@ -62,8 +62,8 @@ const Header = () => {
     dispatch(changeLanguage(ev.target.value));
   };
   return (
-    <div className="w-full h-16 absolute px-8 mb-2 bg-gradient-to-b from-black z-1 flex justify-between  z-10">
-      <img src={NETFLIX_LOGO} alt="logo" className="w-20"></img>
+    <div className="w-full h-16 absolute px-8 mb-2 bg-gradient-to-b from-black z-1 flex flex-col justify-between  z-10 md:flex-row">
+      <img src={NETFLIX_LOGO} alt="logo" className="w-20 mx-auto md:mx-0"></img>
       {user && (
         <div className="flex">
           {GPTView && (
@@ -84,8 +84,8 @@ const Header = () => {
           >
             {GPTView?"Homepage":"GPT Search"}
           </button>
-          <img src={user.photoURL} alt="user img"></img>
-          <button onClick={handleSignOut} className="bg-red-500 text-white">
+          <img className="hidden" src={user.photoURL} alt="user img"></img>
+          <button onClick={handleSignOut} className="bg-red-500 text-white px-2 mt-2 rounded-lg">
             Sign Out
           </button>
         </div>

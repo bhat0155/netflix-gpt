@@ -4,9 +4,8 @@ import GPTSearchBar from "./GPTSearchBar";
 import GPTSuggestions from "./GPTSuggestions";
 
 const GPTSearchPage = () => {
-  const view = useSelector((store) => store.GPTView.currentState);
   return (
-    <div className="bg-black">
+    <div className="bg-black pt-[10%] h-screen">
       <GPTSearchBar />
       <GPTSuggestions />
     </div>

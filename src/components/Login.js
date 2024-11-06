@@ -108,17 +108,18 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div >
       <Header />
       <div>
         <img
+        className="h-screen object-cover"
           src={NETFLIX_BACKGROUND}
           alt="background-image"
         ></img>
       </div>
       <form
         onSubmit={(ev) => ev.preventDefault()}
-        className="w-3/12 p-12 bg-black bg-opacity-75 rounded-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        className="w-2/3 md:w-3/12 p-12 bg-black bg-opacity-75 rounded-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
         <h1 className="text-white py-2 mx-2">
           {isSignedIn ? "Sign In" : "Sign Up"}

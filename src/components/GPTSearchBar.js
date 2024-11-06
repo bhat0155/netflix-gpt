@@ -51,11 +51,11 @@ const GPTSearchBar = () => {
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9"
+          className="p-4 m-4 col-span-9 w-full rounded-lg mx-2"
           placeholder={languages[chosenLanguage].placeholder}
         ></input>
         <button
-          className="bg-red-700 text-white rounded-lg py-2 px-4 m-4 col-span-3"
+          className="bg-red-700 text-white rounded-lg py-2 px-4 m-4 col-span-3 w-20"
           onClick={handleSearch}
         >
           {languages[chosenLanguage].search}
