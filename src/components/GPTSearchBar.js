@@ -43,7 +43,7 @@ const GPTSearchBar = () => {
     dispatch(addMovies({gemini:arrayOfMovies, tmdb:resolvedResults}))
   };
   return (
-    <div className="pt-[10%] flex justify-center">
+    <div className="pt-[10%] flex justify-center bg-black">
       <form
         className="bg-black w-1/2 grid grid-cols-12 z-1 relative"
         onSubmit={(ev) => ev.preventDefault()}
